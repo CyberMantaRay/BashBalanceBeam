@@ -4,15 +4,14 @@
 ## Commands
 - echo ∙∙∙∙∙∙∙ `man -k "<searchfor>"` ∙∙∙∙∙∙∙ less
   - pwd ∙∙∙∙∙∙∙ ls ∙∙∙∙∙∙∙ cd
-  - printenv ∙∙∙∙∙∙∙ which
+  - type ∙∙∙∙∙∙∙ which ∙∙∙∙∙∙∙ printenv
 - cat ∙∙∙∙∙∙∙ `head -n 4` ∙∙∙∙∙∙∙ `tail -n +8`
 - touch ∙∙∙∙∙∙∙ mkdir ∙∙∙∙∙∙∙ `rm -r` ∙∙∙∙∙∙∙ mv ∙∙∙∙∙∙∙ cp
-- source ∙∙∙∙∙∙∙ export ∙∙∙∙∙∙∙ declare
+- source ∙∙∙∙∙∙∙ export ∙∙∙∙∙∙∙ `declare -i/-A`
 
 
 ## Examples ‣
 ```bash
-
 scp -P <port> tosend.log dstuser@ipdomain:~/Documents
 tar xf uncompress.tar.gz
 sudo tar --same-owner -p -xf uncompress.tar.gz
