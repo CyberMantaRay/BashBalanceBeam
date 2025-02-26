@@ -2,7 +2,7 @@
 
 Playground for Linux Bash scripts (projects, experiments, & POCs)
 
-**Explore:** [Basics](/0-Basics.md) [Regex](/0-Regex.md) [VIM](/0-VIM.md)
+**Explore:** [Basics](/0-Basics.md) [Operators](/0-Operators.md) [Regex](/0-Regex.md) [VIM](/0-VIM.md)
 
 ### Environment
 - Bash v5.0
@@ -12,6 +12,9 @@ Playground for Linux Bash scripts (projects, experiments, & POCs)
 
 ## Common Variables ‣
 - $BASH_VERSION ∙∙∙∙∙∙∙ $SHELL ∙∙∙∙∙∙∙ $PATH ∙∙∙∙∙∙∙ $HOME
+
+## Resources
+- [📘 The Bash Guide](https://guide.bash.academy/)
 
 ## Repos
 - [PowerShellHoverNet | CyberMantaRay](https://github.com/CyberMantaRay/PowerShellHoverNet)

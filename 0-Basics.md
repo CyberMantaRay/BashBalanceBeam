@@ -1,5 +1,5 @@
 # Bash Fundamentals
-**Explore:** [Regex](/0-Regex.md)
+**Explore:** [Home](/README.md) [Regex](/0-Regex.md)
 
 ## Commands
 - `man -k "<searchfor>"` ∙∙∙∙∙∙∙ less
@@ -7,6 +7,7 @@
   - printenv ∙∙∙∙∙∙∙ which
 - cat ∙∙∙∙∙∙∙ `head -n 4` ∙∙∙∙∙∙∙ `tail -n +8`
 - touch ∙∙∙∙∙∙∙ mkdir ∙∙∙∙∙∙∙ `rm -r` ∙∙∙∙∙∙∙ mv ∙∙∙∙∙∙∙ cp
+- sleep ∙∙∙∙∙∙∙ xdg-open
 
 ### Built-Ins
 - echo ∙∙∙∙∙∙∙ type ∙∙∙∙∙∙∙ pwd

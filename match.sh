@@ -1,7 +1,11 @@
 #!/bin/bash
 
 [[ $1 =~ $2 ]]
-echo $?          # $?: result of previous command
+
+if [ $? -eq 1 ]                # $?: result of previous command
+then echo "No match..."
+else echo $1 | grep -Eo $2
+fi
 
 # Outputs RESULT of [[ $1 =~ $2 ]] process, i.e. 0=success, 1=fail
 
