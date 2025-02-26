@@ -2,13 +2,17 @@
 **Related:** [Regex](/0-Regex.md)
 
 ## Commands
-- echo ∙∙∙∙∙∙∙ `man -k "<searchfor>"` ∙∙∙∙∙∙∙ less
-  - pwd ∙∙∙∙∙∙∙ ls ∙∙∙∙∙∙∙ cd
-  - type ∙∙∙∙∙∙∙ which ∙∙∙∙∙∙∙ printenv
+- `man -k "<searchfor>"` ∙∙∙∙∙∙∙ less
+  - ls ∙∙∙∙∙∙∙ cd
+  - printenv ∙∙∙∙∙∙∙ which
 - cat ∙∙∙∙∙∙∙ `head -n 4` ∙∙∙∙∙∙∙ `tail -n +8`
 - touch ∙∙∙∙∙∙∙ mkdir ∙∙∙∙∙∙∙ `rm -r` ∙∙∙∙∙∙∙ mv ∙∙∙∙∙∙∙ cp
-- source ∙∙∙∙∙∙∙ export ∙∙∙∙∙∙∙ `declare -i/-A`
 
+### Built-Ins
+- echo ∙∙∙∙∙∙∙ type ∙∙∙∙∙∙∙ pwd
+- read
+- source ∙∙∙∙∙∙∙ export ∙∙∙∙∙∙∙ `declare -i/-A`
+- local ∙∙∙∙∙∙∙ let
 
 ## Examples ‣
 ```bash

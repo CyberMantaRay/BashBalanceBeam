@@ -13,18 +13,18 @@ conditional() {
 
 # FOR LOOP ----------------
 forloop() {
-    for i in 1 2 3 4
+    for i in 1 2 3 "4 5 6"
     do
         echo $i
     done
 }
 
 forloopfile() {
-    iffile = ifcon.sh
-    filecon = $(cat $iffile)
+    pets=pets.txt
+    filetokens=$(cat $pets)
 
-    # Separate & rint file tokens by whitespace excl/ contained between quotes
-    for i in $filecon
+    # Separate tokens by whitespace
+    for i in $filetokens
     do
         echo $i
     done
@@ -44,9 +44,21 @@ whileloop() {
     done
 }
 
-# EXECUTE FUNCTIONS ------------------------------
+# USER INPUT ----------------
+ipaddress() {
+    read -p "What is your IP address? " ip_addr
+    ping -c2 $ip_addr
+}
+
+# --------------------------------------
+# -------        EXECUTE         -------
+# --------------------------------------
+
+
 conditional
 forloop
+forloopfile
 whileloop
+ipaddress
 
 # Run Bash scripts w/ `bash` cmd or by enabling execution permission w/ `chmod`
