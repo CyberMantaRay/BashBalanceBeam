@@ -5,8 +5,7 @@ conditional() {
     a=$true
 
     if $a
-    then
-        echo "1st Avatar: Wan"
+    then echo "1st Avatar: Wan"
     fi
 
     # Equivalent to:
@@ -28,10 +27,32 @@ add() {
     echo $result
 }
 
+casestmt() {
+    read -p "Choose a nation (air,water,earth,fire): " nation
+
+    case "$nation" in
+        fire)
+            echo "Avatar Roku → Avatar Aang." ;;
+        earth)
+            echo "Avatar Kyoshi → Avatar Roku." ;;
+        water)
+            echo "Avatar Kuruk → Avatar Kyoshi." ;;
+        air)
+            echo "Avatar Yangchen → Avatar Kuruk." ;;
+        *)
+            echo "Koh has a new target..." ;;
+    esac
+}
+
 
 # LOOPS ----------------
 forloop() {
     for i in 1 2 3 "4 5 6"
+    do
+        echo $i
+    done
+
+    for i in {4..8..2}          #{start..end..step}
     do
         echo $i
     done
@@ -94,12 +115,13 @@ calc() {
 # -------        EXECUTE         -------
 # --------------------------------------
 
-conditional
+# conditional
+# casestmt
 # add
 # forloop
 # forloopfile
 # whileloop
 # ipaddress
-calc
+# calc
 
 # Run Bash scripts w/ `bash` cmd or by enabling execution permission w/ `chmod`
