@@ -6,12 +6,24 @@ conditional() {
 
     if $a
     then
-        echo "variable a is true"
+        echo "1st Avatar: Wan"
     fi
 }
 
+add() {
+    op="err"
+    if [ $op == "mul" ]
+    then
+        let result=2*3          # 'let' enables math ops
+    else
+        result=2*3
+    fi  
+    
+    echo $result
+}
 
-# FOR LOOP ----------------
+
+# LOOPS ----------------
 forloop() {
     for i in 1 2 3 "4 5 6"
     do
@@ -30,8 +42,6 @@ forloopfile() {
     done
 }
 
-
-# WHILE LOOP --------------
 whileloop() {
     declare -i a
     a=1
@@ -50,15 +60,39 @@ ipaddress() {
     ping -c2 $ip_addr
 }
 
+calc() {
+    read -p "Operand x: " x
+    read -p "Operand y: " y
+    read -p "Op (add,sub,mul,div): " op
+    if [ $op == "add" ]
+    then
+        let result=$x+$y
+    elif [ $op == "sub" ]
+    then
+        let result=$x-$y
+    elif [ $op == "mul" ]
+    then
+        let result=$x*$y
+    elif [ $op == "div" ]
+    then
+        let result=$x/$y
+    else
+        result="$x & $y"
+    fi  
+    
+    echo $result
+}
+
 # --------------------------------------
 # -------        EXECUTE         -------
 # --------------------------------------
 
-
 conditional
-forloop
-forloopfile
-whileloop
-ipaddress
+# add
+# forloop
+# forloopfile
+# whileloop
+# ipaddress
+calc
 
 # Run Bash scripts w/ `bash` cmd or by enabling execution permission w/ `chmod`
