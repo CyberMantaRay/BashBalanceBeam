@@ -13,6 +13,7 @@
 - read
 - source ∙∙∙∙∙∙∙ export ∙∙∙∙∙∙∙ `declare -i/-A`
 - local ∙∙∙∙∙∙∙ let
+- [:books: Executables vs. Built-ins](https://superuser.com/questions/1776275/are-linux-commands-grep-awk-etc-part-of-the-system-or-the-shell)
 
 ## Examples ‣
 ```bash

@@ -8,6 +8,12 @@ conditional() {
     then
         echo "1st Avatar: Wan"
     fi
+
+    # Equivalent to:
+
+    $a && echo "82nd Avatar: Aang"
+
+    # Shell & Booleans: https://stackoverflow.com/questions/2953646/how-can-i-declare-and-use-boolean-variables-in-a-shell-script
 }
 
 add() {
@@ -64,23 +70,24 @@ calc() {
     read -p "Operand x: " x
     read -p "Operand y: " y
     read -p "Op (add,sub,mul,div): " op
-    if [ $op == "add" ]
-    then
-        let result=$x+$y
-    elif [ $op == "sub" ]
-    then
-        let result=$x-$y
-    elif [ $op == "mul" ]
-    then
-        let result=$x*$y
-    elif [ $op == "div" ]
-    then
-        let result=$x/$y
+
+    declare -i result           # 'declare' casts variable as specified type, i.e. -i for integer
+    opperformed=true
+
+    if [ $op == "add" ]; then
+        result=$x+$y
+    elif [ $op == "sub" ]; then
+        result=$x-$y
+    elif [ $op == "mul" ]; then
+        result=$x*$y
+    elif [ $op == "div" ]; then
+        result=$x/$y
     else
-        result="$x & $y"
-    fi  
-    
-    echo $result
+        echo "$x & $y"
+        opperformed=false
+    fi
+
+    if [ "$opperformed" == true ]; then echo $result; fi
 }
 
 # --------------------------------------
