@@ -1,5 +1,5 @@
 # Bash Fundamentals
-**Related:** [Regex](/0-Regex.md)
+**Explore:** [Regex](/0-Regex.md)
 
 ## Commands
 - `man -k "<searchfor>"` ∙∙∙∙∙∙∙ less

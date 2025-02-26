@@ -2,7 +2,7 @@
 
 Playground for Linux Bash scripts (projects, experiments, & POCs)
 
-**Explore:** [Basics](/0-Basics.md) [Regex](/0-Regex.md)
+**Explore:** [Basics](/0-Basics.md) [Regex](/0-Regex.md) [VIM](/0-VIM.md)
 
 ### Environment
 - Bash v5.0
