@@ -25,6 +25,9 @@ sudo tar --same-owner -p -xf uncompress.tar.gz
 
 ## Commands
 
+### echo
+- `-e` Enable interpretation of backslash escapes
+
 ### find
 - `-size (+/-)500k`  Select files over/under a defined size in bytes
 - `-perm mode`    permission bits are exactly mode (octal or symbolic).

@@ -2,10 +2,11 @@
 **Explore:** [Basics](/0-Basics.md)
 
 ## Operators
-- \[] (POSIX) ∙∙∙∙∙∙∙ \[\[ ]] (upgraded `test`)
+- `test` \[ ] (POSIX) ∙∙∙∙∙∙∙ \[\[ ]] (improved, allows pattern matching w/ `=~`)
   - `-z`=str null ∙∙∙∙∙∙∙ `-n`=str not null
   - `-f`=file exists ∙∙∙∙∙∙∙ `-s`=file size not zero
   - `-d`=directory
+  - **Tip:** Variables that don't exist return a 0. How can this affect your conditionals?
 - [:books: \[\[ vs \[ vs ( vs ((](https://unix.stackexchange.com/questions/306111/what-is-the-difference-between-the-bash-operators-vs-vs-vs)
 
 ## Expansions

@@ -15,6 +15,8 @@ Playground for Linux Bash scripts (projects, experiments, & POCs)
 
 ## Resources
 - [📘 The Bash Guide](https://guide.bash.academy/)
+- [🔧 Shell Script Code Analysis | ShellCheck](https://www.shellcheck.net/)
+- [🔧 Bourne Shell Unit Testing Framework | shUnit2](https://github.com/kward/shunit2)
 
 ## Repos
 - [PowerShellHoverNet | CyberMantaRay](https://github.com/CyberMantaRay/PowerShellHoverNet)
