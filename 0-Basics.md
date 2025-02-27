@@ -14,6 +14,10 @@
 - read
 - source ∙∙∙∙∙∙∙ export ∙∙∙∙∙∙∙ `declare -i/-A`
 - local ∙∙∙∙∙∙∙ let
+- set
+  - '-' to set/ '+' to unset
+  - -x (debug) ∙∙∙∙∙∙∙ -a (export variables by def.)
+  - -u (error on unset variables) ∙∙∙∙∙∙∙ -e (stop on non-zero val)
 - [:books: Executables vs. Built-ins](https://superuser.com/questions/1776275/are-linux-commands-grep-awk-etc-part-of-the-system-or-the-shell)
 
 ## Examples ‣

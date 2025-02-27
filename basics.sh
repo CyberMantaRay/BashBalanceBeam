@@ -1,6 +1,60 @@
 #!/bin/bash
 
-# CONDITIONAL -------------
+############################
+###      DATA TYPES      ###
+############################
+
+arrays() {
+    arr1=(6 2 4 "Kali" 8 "Luther")        # Array values space-separated
+    echo ${arr1[@]}         # Access all elements
+    echo ${arr1[3]}                 # 0-indexed
+    printf "Length: %s\n" "${#arr1[@]}"    # Get array length w/ #arr[@] or #arr[*]
+}
+
+associativeArray() {
+    declare -A avatars=([roku]="Fire"
+        [kyoshi]="Earth"
+        [kuruk]="Water"
+        [yangchen]="Air"
+    )
+    echo ${avatars[@]}          # Print values (random order)
+    echo ${!avatars[@]}         # Print keys (random order)
+    echo ${avatars[kyoshi]}
+
+    avatars[aang]="Air"         # Adding element
+    echo ${!avatars[@]}
+}
+
+gymBadgesKanto() {
+    declare -A Badges=(
+        [Brock]="Boulder Badge"
+        [Misty]="Cascade Badge"
+        [Lt.Surge]="Thunder Badge"
+        [Erika]="Rainbow Badge"
+        [Janine]="Soul Badge"
+        [Sabrina]="Marsh Badge"
+        [Blaine]="Volcano Badge"
+        [Giovanni]="Earth Badge"
+    )
+
+    for gymleader in ${!Badges[@]}
+    do
+        echo $gymleader "=" ${Badges[$gymleader]}       # Print key/value pairs
+    done
+}
+
+integerToBinary() {
+    read -p "Pick a number (0-255): " integer
+
+    # Generates all values b/w 00000000 to 11111111 as distinct elements (length=256)
+    IntegerToBinary=({0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1})
+    echo "$integer in binary is ${IntegerToBinary[$integer]}"
+}
+
+############################
+###     CONDITIONALS     ###
+############################
+
 conditional() {
     a=$true
 
@@ -32,7 +86,7 @@ casestmt() {
 
     case "$nation" in
         fire)
-            echo "Avatar Roku → Avatar Aang." ;;
+            echo "Avatar Roku ➞ Avatar Aang." ;;
         earth)
             echo "Avatar Kyoshi → Avatar Roku." ;;
         water)
@@ -45,7 +99,10 @@ casestmt() {
 }
 
 
-# LOOPS ----------------
+#######################
+###      LOOPS      ###
+#######################
+
 forloop() {
     for i in 1 2 3 "4 5 6"
     do
@@ -81,7 +138,10 @@ whileloop() {
     done
 }
 
-# USER INPUT ----------------
+############################
+###      USER INPUT      ###
+############################
+
 ipaddress() {
     read -p "What is your IP address? " ip_addr
     ping -c2 $ip_addr
@@ -115,6 +175,9 @@ calc() {
 # -------        EXECUTE         -------
 # --------------------------------------
 
+# arrays
+# associativeArray
+# gymBadgesKanto
 # conditional
 # casestmt
 # add
@@ -124,4 +187,4 @@ calc() {
 # ipaddress
 # calc
 
-# Run Bash scripts w/ `bash` cmd or by enabling execution permission w/ `chmod`
+# Run Bash scripts w/ `bash` cmd or by enabling execution permission w/ `chmod +x`

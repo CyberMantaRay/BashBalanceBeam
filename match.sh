@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function match() {
-    printf "\tInput:    $1\n\tPattern:  $2\n"
+    printf "\tInput:    %s\n\tPattern:  %s\n" "$1" "$2" >&2
 
     [[ $1 =~ $2 ]]      # =~ only matches once per string
 
@@ -19,7 +19,7 @@ function match() {
     fi
 }
 
-if [[ $1 != "" ]] && [[ $2 != "" ]]
+if [ $1 != "" ] && [ $2 != "" ]
 then match "$1" "$2"
 fi
 

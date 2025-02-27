@@ -11,12 +11,15 @@ Playground for Linux Bash scripts (projects, experiments, & POCs)
 - Shell scripts start with `#!` + location of shell, e.g. `#!/bin/bash`
 
 ## Common Variables ‣
-- $BASH_VERSION ∙∙∙∙∙∙∙ $SHELL ∙∙∙∙∙∙∙ $PATH ∙∙∙∙∙∙∙ $HOME
+- $BASH_VERSION ∙∙∙∙∙∙∙ $SHELL ∙∙∙∙∙∙∙ $PATH ∙∙∙∙∙∙∙ $HOME 
+- Last executed command: `$?` (exit val) ∙∙∙∙∙∙∙ `$!` (pid)
+- `$$` (shell pid) ∙∙∙∙∙∙∙ `$_` (next item in pipeline)
+- `$#` (num args passed)
 
 ## Resources
 - [📘 The Bash Guide](https://guide.bash.academy/)
 - [🔧 Shell Script Code Analysis | ShellCheck](https://www.shellcheck.net/)
-- [🔧 Bourne Shell Unit Testing Framework | shUnit2](https://github.com/kward/shunit2)
+- [🔧 Bash Unit Testing Framework | shUnit2](https://github.com/kward/shunit2)
 
 ## Repos
 - [PowerShellHoverNet | CyberMantaRay](https://github.com/CyberMantaRay/PowerShellHoverNet)

@@ -3,7 +3,7 @@
 
 ## Cheatsheet
 - grep ∙∙∙∙∙∙∙ `wc -l`
-- sort ∙∙∙∙∙∙∙ `uniq -c`
+- `sort -u` ∙∙∙∙∙∙∙ `uniq -c`
 
 ## Examples
 ```bash
@@ -54,3 +54,4 @@ _Cannot be used in conjunction with -o_
 - [Extended Regex | Seneca](https://pressbooks.senecapolytechnic.ca/uli101/chapter/extended-regular-expressions/)
 - [EREs | Gnu.org](https://www.gnu.org/software/sed/manual/html_node/Extended-regexps.html)
 - See the [PowerShell regex md](https://github.com/CyberMantaRay/PowerShellHoverNet/blob/trunk/0-Regex.md#learn-regex) for resources.
+- [Negative Lookahead](https://stackoverflow.com/questions/977251/regular-expressions-and-negating-a-whole-character-group)

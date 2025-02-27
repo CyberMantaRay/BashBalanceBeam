@@ -23,9 +23,12 @@
   - `for i in $(ls)`
 
  ## Bash Redirection
-- Standard input (0), output (1), error (2): `stdin` ∙∙∙∙∙∙∙ `stdout` ∙∙∙∙∙∙∙ `stderr`
-  - Redir. output: `date > file.sh`
+- **File Descriptors:** Standard input (0), output (1), error (2): `stdin` ∙∙∙∙∙∙∙ `stdout` ∙∙∙∙∙∙∙ `stderr`
+  - Redir. stdout: `date > file.sh`
   - Redir. stderr : `find / pkmn.txt 2> /dev/null`
-  - Redir. input: `sort < pkmn-gen4.txt`
+  - Redir. stdin: `sort < pkmn-gen4.txt`
   - Append: `sort pkmn.txt >> pkmn-sorted.txt`
 - [:books: Expansions | The Bash Guide](https://guide.bash.academy/expansions/)
+- More Examples
+  - `>&2`	Redirect stdout to stderr
+  - `2>&1`	Redirect stderr to stdout
