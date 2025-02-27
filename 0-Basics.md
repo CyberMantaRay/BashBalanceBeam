@@ -1,7 +1,7 @@
 # Bash Fundamentals
 **Explore:** [Home](/README.md) [Regex](/0-Regex.md)
 
-## Commands
+## Cheatsheet
 - `man -k "<searchfor>"` ∙∙∙∙∙∙∙ less
   - ls ∙∙∙∙∙∙∙ cd
   - printenv ∙∙∙∙∙∙∙ which
@@ -23,7 +23,7 @@ tar xf uncompress.tar.gz
 sudo tar --same-owner -p -xf uncompress.tar.gz
 ```
 
-## Frequent Commands
+## Commands
 
 ### find
 - `-size (+/-)500k`  Select files over/under a defined size in bytes

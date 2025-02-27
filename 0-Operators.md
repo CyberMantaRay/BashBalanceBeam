@@ -10,12 +10,12 @@
 
 ## Expansions
 - **Tilde** `~` ≡ home directory, e.g. `/home/ash.ketchum`
-- Parameter expansion - 
+- Parameter expansion - !TODO
 - **Variable expansion** `${<var>}` -
   - `${variable#pattern}` will remove the shortest possible match of pattern from the beginning of the variable's value
   - `${variable%pattern}` will remove from the end of the variable's value
 - **Brace expansion** - gen. arbitrary strings (can be nested)
-  - `mkdir pkmn{1..16}`
+  - `mkdir pkmn{01..16}`
   - `echo char{m{ander,eleon},izard}`
 - **Command substitution** `$(<cmd>)` - cmd output replaces cmd
   - `mkdir "$(date)"`
