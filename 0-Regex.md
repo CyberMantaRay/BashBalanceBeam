@@ -1,5 +1,5 @@
 # Bash Regex
-**Explore:** [Basics](/0-Basics.md)
+**Explore:** [Home](/README.md) [Basics](/0-Basics.md)
 
 ## Cheatsheet
 - grep ∙∙∙∙∙∙∙ `wc -l`
@@ -9,12 +9,7 @@
 ```bash
 grep -Eo "[0-9]+(\.[0-9]+){3}" sample.log | sort | uniq -c
   # : Count occurences of unique ip's
-awk '/Name/ {print NR " "$2" "$3}' Pokemart_Employees.txt
-awk '/Name/ { if (length($2) > max) max = length($2) } END {print max}' Pokemart_Employees.txt
-  # : Print length of longest first name
-sed -Ee 's/[0-9]{3}-[0-9]{2}-[0-9]{4}/XXX-XX-XXXX/w redacted.txt' Pokemart_Employees.txt
-  # : Replace all SSNs and write to new file
-echo -e "hello world\ngoodbye world\nhello brave new world" | awk -F o '/goodbye/ {print NR, $1, $3, $4}'
+echo -e "hello world\ngoodbye world\nhello brave new world" | awk -Fo '/goodbye/ {print NR, $1, $3, $4}'
 ```
 
 ## Commands
@@ -39,6 +34,15 @@ _Cannot be used in conjunction with -o_
 - `-E, -r, --regexp-extended` Use extended regular expressions (ERE) in the script
 - [Useful Sed | Adrian Larion](https://github.com/adrianlarion/useful-sed)
 
+
+```bash
+
+sed -Ei 's/[0-9]{3}-[0-9]{2}-/xxx-xx-/' Pokemart_Employees.txt
+  # : Deidentify first 5 digits of SSN, overwrite file, i.e. in-place
+sed -E 's/[0-9]{3}-[0-9]{2}-[0-9]{4}/XXX-XX-XXXX/w redacted.txt' Pokemart_Employees.txt
+  # : Replace all SSNs and write to new file
+```
+
 ### awk
 - Pattern written b/w forward slashes, e.g. `'/<regex>/ {print NR " " $2 " " $3}'`
   - **NR** specifies row number
@@ -46,6 +50,14 @@ _Cannot be used in conjunction with -o_
 - [Practical Awk | Seth Kenlon](https://opensource.com/article/20/9/awk-ebook)
 - [Awk Examples | GeeksForGeeks](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
 - [Simple Awk | Adrian Larion ](https://github.com/adrianlarion/simple-awk)
+
+
+```bash
+awk '/Name/ {print NR " "$2" "$3}' Pokemart_Employees.txt
+awk '/Name/ { if (length($2) > max) max = length($2) } END {print max}' Pokemart_Employees.txt
+  # : Print length of longest first name
+echo -e "hello world\ngoodbye world\nhello brave new world" | awk -F o '/goodbye/ {print NR, $1, $3, $4}'
+```
 
 #### Flags/Params
 - `-F fs, --field-separator fs` Use fs for the input field separator

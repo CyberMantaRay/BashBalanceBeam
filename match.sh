@@ -1,15 +1,19 @@
 #!/bin/bash
 
+# set -x
+
 function match() {
     printf "\tInput:    %s\n\tPattern:  %s\n" "$1" "$2" >&2
 
     [[ $1 =~ $2 ]]      # =~ only matches once per string
 
-    if [ $? -eq 0 ]     # $?: result of previous command
+    declare -i groupsCaptured=${#BASH_REMATCH[@]}-1     # Get array length: ${#arr[@]}
+
+    if [ ${#BASH_REMATCH[@]} -gt 0 ]     # $?: result of previous command
     then
-        echo -e "\tMATCHES:"
+        printf "\tMATCHES (gcaps x%d):\n" "$groupsCaptured"
         for i in "${!BASH_REMATCH[@]}"; do
-            echo -e "\t  - $i: ${BASH_REMATCH[$i]}"
+            echo -e "\t  ∙ $i: ${BASH_REMATCH[$i]}"
         done
         return 0
     # else echo "$1" | grep -Eo "$2"
@@ -19,7 +23,7 @@ function match() {
     fi
 }
 
-if [ $1 != "" ] && [ $2 != "" ]
+if [ $# -eq 2 ]             # '$#' = num args passed into script
 then match "$1" "$2"
 fi
 

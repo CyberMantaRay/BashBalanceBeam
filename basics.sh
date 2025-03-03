@@ -9,6 +9,19 @@ arrays() {
     echo ${arr1[@]}         # Access all elements
     echo ${arr1[3]}                 # 0-indexed
     printf "Length: %s\n" "${#arr1[@]}"    # Get array length w/ #arr[@] or #arr[*]
+
+    # ----- SPECIAL VARIABLES -----
+    # Try running w/: bash hellobash.sh -e arg1 arg2 arg3
+    # Does each output match what you expect?
+    echo "$0"       # Command line arg ${n}, w/ '$0' being script name, e.g. hellobash.sh
+    echo "$*"       # Command line args as string not incl. $0
+    echo "$#"       # Command line arg count not incl. $0
+    echo "$@"       # Command line args as array not incl. $0
+    echo -- "$@"
+    printf "%s\t" "$@"
+    printf "\n%s\n" "$*"
+    echo "${@:$(($#-1))}"       # ${@:M} = grab args from M index to end of array
+    echo "${@:$#:1}"            # ${@:M:N?} = N specifies # args to grab starting at M index
 }
 
 associativeArray() {
@@ -175,7 +188,7 @@ calc() {
 # -------        EXECUTE         -------
 # --------------------------------------
 
-# arrays
+# arrays $@
 # associativeArray
 # gymBadgesKanto
 # conditional

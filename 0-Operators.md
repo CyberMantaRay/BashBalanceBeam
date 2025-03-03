@@ -1,7 +1,7 @@
-# Bash Fundamentals
-**Explore:** [Basics](/0-Basics.md)
+# Bash Operators
+**Explore:** [Home](/README.md) [Basics](/0-Basics.md)
 
-## Operators
+## Cheatsheet
 - `test` \[ ] (POSIX) ∙∙∙∙∙∙∙ \[\[ ]] (improved, allows pattern matching w/ `=~`)
   - `-z`=str null ∙∙∙∙∙∙∙ `-n`=str not null
   - `-f`=file exists ∙∙∙∙∙∙∙ `-s`=file size not zero

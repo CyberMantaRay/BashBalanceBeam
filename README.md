@@ -2,7 +2,7 @@
 
 Playground for Linux Bash scripts (projects, experiments, & POCs)
 
-**Explore:** [Basics](/0-Basics.md) [Operators](/0-Operators.md) [Regex](/0-Regex.md) [VIM](/0-VIM.md)
+**Explore:** [Basics](/0-Basics.md) [Operators](/0-Operators.md) [Printf](/0-Printf.md) [Regex](/0-Regex.md) [VIM](/0-VIM.md)
 
 ### Environment
 - Bash v5.0
@@ -14,7 +14,7 @@ Playground for Linux Bash scripts (projects, experiments, & POCs)
 - $BASH_VERSION ∙∙∙∙∙∙∙ $SHELL ∙∙∙∙∙∙∙ $PATH ∙∙∙∙∙∙∙ $HOME 
 - Last executed command: `$?` (exit val) ∙∙∙∙∙∙∙ `$!` (pid)
 - `$$` (shell pid) ∙∙∙∙∙∙∙ `$_` (next item in pipeline)
-- `$#` (num args passed)
+- `$#` (num args passed) ∙∙∙∙∙∙∙ `$@` (arg array) ∙∙∙∙∙∙∙ `$*` (args string)
 
 ## Resources
 - [📘 The Bash Guide](https://guide.bash.academy/)
