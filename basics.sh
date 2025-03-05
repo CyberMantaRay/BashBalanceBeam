@@ -129,7 +129,7 @@ forloop() {
 }
 
 forloopfile() {
-    pets=pets.txt
+    pets=./data/pets.txt
     filetokens=$(cat $pets)
 
     # Separate tokens by whitespace
@@ -149,6 +149,14 @@ whileloop() {
         a+=1
         a="$a+1"
     done
+}
+
+whileloopfile() {
+    # while IFS= read -r passphrase || [[ -n "$passphrase" ]]; do         # Allows picking up last line even if doesn't end in newline
+    # IFS=internal field separator, prevents trimming of leading/trailing spaces or treating spaces as delimiters
+    while IFS= read -r passphrase; do       # Last line of actual content must end with a newline to be properly parsed
+        echo "Passphrase: '$passphrase'"
+    done < ./data/pkmn-gen4.txt
 }
 
 ############################
@@ -197,6 +205,7 @@ calc() {
 # forloop
 # forloopfile
 # whileloop
+# whileloopfile
 # ipaddress
 # calc
 
