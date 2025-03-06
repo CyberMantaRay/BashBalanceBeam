@@ -7,14 +7,14 @@ Playground for Linux Bash scripts (projects, experiments, & POCs)
 ### Environment
 - Bash v5.0
 
-## Tips
-- Shell scripts start with `#!` + location of shell, e.g. `#!/bin/bash`
-
 ## Common Variables ‣
 - $BASH_VERSION ∙∙∙∙∙∙∙ $SHELL ∙∙∙∙∙∙∙ $PATH ∙∙∙∙∙∙∙ $HOME 
 - Last executed command: `$?` (exit val) ∙∙∙∙∙∙∙ `$!` (pid)
 - `$$` (shell pid) ∙∙∙∙∙∙∙ `$_` (next item in pipeline)
 - `$#` (num args passed) ∙∙∙∙∙∙∙ `$@` (arg array) ∙∙∙∙∙∙∙ `$*` (args string)
+
+## Tips
+- Shell scripts start with `#!` + location of shell, e.g. `#!/bin/bash`
 
 ## Resources
 - [📘 The Bash Guide](https://guide.bash.academy/)

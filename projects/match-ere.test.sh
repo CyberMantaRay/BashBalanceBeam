@@ -1,4 +1,4 @@
-source ./match.sh
+source ./match-ere.sh
 
 # test_TEMPLATE() {
 #     result=$(match "STRING" 'REGEX')
