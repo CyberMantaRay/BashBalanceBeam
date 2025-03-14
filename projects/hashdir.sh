@@ -5,20 +5,20 @@
 #   -c = show collisions only across each algo
 
 hash() {
-    HASH_ALGOS=("md5sum" "sha1sum" "sha256sum" "sha512sum")
+    HASH_ALGOS=("md5" "sha1" "sha256" "sha512")
     HEX_DIGITS=(32 40 64 128)
 
     for i in {0..3}; do
         echo "----------------------------------"
-        echo "--- ALGO: ${HASH_ALGOS[$i]} --------------"
+        echo "--- ALGO: ${HASH_ALGOS[$i]} -----------------"
         echo "----------------------------------"
 
-        result=$(find "$1" -type f -print0 | xargs -0 ${HASH_ALGOS[$i]} | sort)
+        result=$(find "$1" -type f -print0 | xargs -0 ${HASH_ALGOS[$i]}"sum" | sort)
         # result=$(find "$1" -type f -print0 \( ! -name "*.sh" \) | xargs -0 ${HASH_ALGOS[$i]} | sort)             # Excludes script files
 
         if [[ "$2" == "-c" ]]; then
-            echo "$result" | uniq -w ${HEX_DIGITS[$i]} -D
-        else echo "$result"
+            echo "$result" | uniq -w ${HEX_DIGITS[$i]} -D | sed "s/^/\"${HASH_ALGOS[$i]}\" /"
+        else echo "$result" | sed "s/^/\"${HASH_ALGOS[$i]}\" /"
         fi
         
         echo -e ""
