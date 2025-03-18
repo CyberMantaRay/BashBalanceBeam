@@ -117,15 +117,18 @@ casestmt() {
 #######################
 
 forloop() {
-    for i in 1 2 3 "4 5 6"
-    do
-        echo $i
-    done
-
+    # for i in 1 2 3 "4 5 6"
     for i in {4..8..2}          #{start..end..step}
     do
         echo $i
     done
+
+    for p in /{usr/local/sbin,usr/local/bin,usr/sbin,usr/bin,sbin,bin}
+    do
+    	ls $p >> cmds
+    done
+
+    sort -u cmds > scmds
 }
 
 forloopfile() {

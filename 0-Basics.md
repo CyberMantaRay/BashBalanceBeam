@@ -1,16 +1,19 @@
 # Bash Fundamentals
 **Explore:** [Home](/README.md) [Regex](/0-Regex.md)
 
-## Cheatsheet
-- `man -k "<searchfor>"` ∙∙∙∙∙∙∙ less
-  - ls ∙∙∙∙∙∙∙ cd
+## File System Navigation
+- pwd ∙∙∙∙∙∙∙∙∙∙∙ ls  ∙∙∙∙∙∙∙∙∙∙∙ cd
+- less ∙∙∙∙∙∙∙∙∙∙∙ touch ∙∙∙∙∙∙∙∙∙∙∙ mkdir
+- cat ∙∙∙∙∙∙∙∙∙∙∙ `head -n 4` ∙∙∙∙∙∙∙∙∙∙∙ `tail -n +8`
+- mv ∙∙∙∙∙∙∙∙∙∙∙ cp ∙∙∙∙∙∙∙∙∙∙∙ `rm -r`
+
+## Commands
+- `man -k "<searchfor>"` ∙∙∙∙∙∙∙ file
   - printenv ∙∙∙∙∙∙∙ which
-- cat ∙∙∙∙∙∙∙ `head -n 4` ∙∙∙∙∙∙∙ `tail -n +8`
-- touch ∙∙∙∙∙∙∙ mkdir ∙∙∙∙∙∙∙ `rm -r` ∙∙∙∙∙∙∙ mv ∙∙∙∙∙∙∙ cp
 - sleep ∙∙∙∙∙∙∙ xdg-open
 
 ### Built-Ins
-- echo ∙∙∙∙∙∙∙ type ∙∙∙∙∙∙∙ pwd
+- type ∙∙∙∙∙∙∙ pwd ∙∙∙∙∙∙∙ echo
 - read
 - source ∙∙∙∙∙∙∙ export ∙∙∙∙∙∙∙ `declare -i/-A`
 - local ∙∙∙∙∙∙∙ let
@@ -27,14 +30,12 @@ tar xf uncompress.tar.gz
 sudo tar --same-owner -p -xf uncompress.tar.gz
 ```
 
-## Commands
-
 ### echo
 - `-e` Enable interpretation of backslash escapes
 
 ### find
 - `-size (+/-)500k`  Select files over/under a defined size in bytes
-- `-perm mode`    permission bits are exactly mode (octal or symbolic).
+- `-perm mode`    Permission bits are exactly mode (octal or symbolic).
 - `-perm -mode`    All selected permission bits mode are set for the file.
 - `-perm /mode`    Any of the permission bits mode are set for the file.
 - [Linux Permissions | RedHat](https://www.redhat.com/en/blog/suid-sgid-sticky-bit)

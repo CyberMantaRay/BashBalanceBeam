@@ -17,7 +17,7 @@ hash() {
         # result=$(find "$1" -type f -print0 \( ! -name "*.sh" \) | xargs -0 ${HASH_ALGOS[$i]} | sort)             # Excludes script files
 
         if [[ "$2" == "-c" ]]; then
-            echo "$result" | uniq -w ${HEX_DIGITS[$i]} -D | sed "s/^/\"${HASH_ALGOS[$i]}\" /"
+            echo "$result" | uniq -D -w ${HEX_DIGITS[$i]} | sed "s/^/\"${HASH_ALGOS[$i]}\" /"
         else echo "$result" | sed "s/^/\"${HASH_ALGOS[$i]}\" /"
         fi
         
