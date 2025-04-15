@@ -33,9 +33,11 @@ printf '0x%X\n' $((0x31a-0x21b))        # Arithmetic expansion w/ $((...)); allo
 - **File Descriptors:** Standard input (0), output (1), error (2): `stdin` ∙∙∙∙∙∙∙ `stdout` ∙∙∙∙∙∙∙ `stderr`
   - Redir. stdout: `date > file.sh`
   - Redir. stderr : `find / pkmn.txt 2> /dev/null`
+    - `2> /dev/null` excludes all errors from output
   - Redir. stdin: `sort < pkmn-gen4.txt`
   - Append: `sort pkmn.txt >> pkmn-sorted.txt`
 - [:books: Expansions | The Bash Guide](https://guide.bash.academy/expansions/)
 - More Examples
   - `>&2`	Redirect stdout to stderr
   - `2>&1`	Redirect stderr to stdout
+    - [Example of 2>&1 w/ find cmd](https://www.cyberciti.biz/faq/bash-find-exclude-all-permission-denied-messages/)

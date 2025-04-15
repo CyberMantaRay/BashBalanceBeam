@@ -1,6 +1,6 @@
 # Network Debugging
 
-**Explore:** [Home](/README.md)
+**Explore:** [Home](/README.md) [Basics](/0-Basics.md)
 
 ## Cheatsheet
 - `dig <domain|ip> <qry_type>`

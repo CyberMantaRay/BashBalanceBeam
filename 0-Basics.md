@@ -8,7 +8,7 @@
 - mv ∙∙∙∙∙∙∙∙∙∙∙ cp ∙∙∙∙∙∙∙∙∙∙∙ `rm -r`
 
 ## Commands
-- `man -k "<searchfor>"` ∙∙∙∙∙∙∙ file
+- `man -k "<searchfor>"` ∙∙∙∙∙∙∙ *file
   - printenv ∙∙∙∙∙∙∙ which
 - sleep ∙∙∙∙∙∙∙ xdg-open
 
@@ -54,4 +54,7 @@ find -perm -ug=rwx -type f
   # : 3 commands above are equivalent
 find -perm -445 -perm -g+s
 find -perm -1446
+
+# Exclude multiple branches w/ prune
+find / -type d \( -path /var -o -path /sys -o -path /usr \) -prune -o -name "*syslog*" 2> /dev/null
 ```
