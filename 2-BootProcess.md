@@ -42,6 +42,18 @@ less /boot/grub/grub.cfg
 ```bash
 ps -p 1                           # Determine init daemon via 1st process
 ```
+
+### Run Levels
+| RL | Description | Systemd Target |
+| --- | --- | --- |
+| 0 | Halt (Shutdown) | poweroff.target |
+| 1 | Single User | rescue.target |
+| 2	| Multi-user mode | multi-user.target |
+| 3 | Multi-user mode w/ networking | multi-user.target |
+| 4 | Unused/user-definable | multi-use.target |
+| 5 | Multi-user mode w/ networking & GUI Desktop| graphical.target |
+| 6 | Reboot | reboot.target |
+
 ### Systemd (modern)
 - `systemctl` - cmd to interact w/ systemd sys and svc mngr
 
@@ -59,7 +71,6 @@ systemctl cat default.target
 ```
 
 ### SystemV (legacy)
-- /etc/init > /sbin/init > /etc/inittab (target run level, i.e 0-6)
 
 ```bash
 less /etc/inittab
@@ -68,3 +79,6 @@ ls -l /etc/rc6.d/
 find /etc/ -type f -name "ssh*"
 less /etc/init.d/ssh
 ```
+
+- `/etc/init` > `/sbin/init` > `/etc/inittab`
+- `/etc/rc*.d` - contains processes to be run at each run level 
