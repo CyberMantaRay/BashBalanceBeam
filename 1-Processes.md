@@ -1,11 +1,19 @@
 # Linux Processes
 **Explore:** [Home](/README.md) [Basics](/0-Basics.md)
 
-## Cheatsheet
+## Services
+
+```bash
+systemctl list-units --type=service
+```
+
+## Processes
 - ps ∙∙∙∙∙∙∙∙∙∙∙ top ∙∙∙∙∙∙∙∙∙∙∙ pidof
 - lsof ∙∙∙∙∙∙∙∙∙∙∙ htop ∙∙∙∙∙∙∙∙∙∙∙ kill
 
 ```bash
+systemctl status <pid>
+
 ps -elf --forest
 ps --pid <pid> -lf
 ps -p $(pidof <pname>) -o args       # '-o args' shows cmd arguments
@@ -13,9 +21,8 @@ ps -eo args | grep <pname>
 
 sudo ls -l /proc/<pid>               # Explore files rel. to process (view symlinks), e.g. ./cmdline
 tr '\0' ' ' </proc/28865/cmdline
-sudo lsof -c sshd | grep -v ' mem '
 
-netstat -ano | grep -E "(tcp |udp )"
+netstat -ano | grep -E "(tcp |udp )"        # -anop requires sudo
 
 ps --ppid 2 -lf | head               # Display only kthreadd processes (kernel)
 ps --ppid 2 -Nlf | head              # Display only user processes, i.e. non-kernel (-N negates)
@@ -44,8 +51,12 @@ ps --ppid 2 -Nlf | head              # Display only user processes, i.e. non-ker
 - [lsof](https://cheat.sh)
 
 ```bash
-sudo lsof -c sshd                    # List all open files for specific process
-sudo lsof -i :<port>                 # List open files using specified port
+sudo lsof -p <pid>                       # Using process id
+sudo lsof -i :<port>                     # Using port
+sudo lsof -c sshd | grep -v ' mem '      # For process name starting w/ chars
+
+cat /proc/net/tcp
+sudo lsof | grep <inode>             # Provides process id
 ```
 
 ## Cron Jobs (Scheduler)
@@ -57,4 +68,5 @@ sudo lsof -i :<port>                 # List open files using specified port
 
 ```bash
 crontab -l -u <user>
+sudo ls -al /var/spool/cron/crontabs/
 ```

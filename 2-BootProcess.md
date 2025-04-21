@@ -42,6 +42,62 @@ less /boot/grub/grub.cfg
 ```bash
 ps -p 1                           # Determine init daemon via 1st process
 ```
+- Shared Persistence Locations
+  - `/etc/profile` ∙∙∙∙∙∙∙∙∙∙∙ `/etc/profile.d/`
+  - `/etc/environment`
+  - `/etc/init.d/` - honored by Systemd via compat. wrappers
+  - User
+    - `~/.profile` ∙∙∙∙∙∙∙∙∙∙∙ `~/.bashrc` ∙∙∙∙∙∙∙∙∙∙∙ `~/.bash_profile` ∙∙∙∙∙∙∙∙∙∙∙ `~/.bash_logout`
+
+### Systemd (modern)
+- `systemctl` - cmd to interact w/ systemd sys and svc mngr
+
+```bash
+ls -l /sbin | grep init
+ls -l /lib/systemd/system | grep default.target
+tail -n 8 /lib/systemd/system/graphical.target
+find /etc -name "*rsyslog*" 2> /dev/null | xargs file
+
+systemctl --all
+systemctl cat hello.service
+
+systemctl list-unit-files
+systemctl list-dependencies graphical.target
+systemctl show -p Wants graphical.target
+systemctl cat default.target
+
+systemctl list-timers --all
+journalctl -u hello.service
+```
+
+#### Persistence Locations
+- System
+  - `/lib/systemd/system/` ∙∙∙∙∙∙∙∙∙∙∙ `/etc/systemd/system/*.service`
+  - `/etc/systemd/system/*.timer` - scheduled tasks via systemd-timers (local)
+    - `backup.timer` → activates `backup.service`
+- User
+  - `~/.config/systemd/user/` - per user systemd-timers
+
+### SystemV (legacy)
+- `/etc/init` → `/sbin/init` → runs `/etc/inittab`
+
+```bash
+less /etc/inittab
+ls -l /etc | grep rc.*\.d
+ls -l /etc/rc6.d/
+find /etc/ -type f -name "ssh*"
+less /etc/init.d/ssh
+```
+
+#### Persistence Locations
+- User
+  - `/var/spool/cron/`
+- System
+  - `/etc/inittab`
+    - `/etc/init.d/` ∙∙∙∙∙∙∙∙∙∙∙ `/etc/rc[0-6].d/`
+  - `/etc/cron.d/` ∙∙∙∙∙∙∙∙∙∙∙ `/etc/crontab/`
+  - `/etc/default/`
+
 
 ### Run Levels
 | RL | Description | Systemd Target |
@@ -53,32 +109,3 @@ ps -p 1                           # Determine init daemon via 1st process
 | 4 | Unused/user-definable | multi-use.target |
 | 5 | Multi-user mode w/ networking & GUI Desktop| graphical.target |
 | 6 | Reboot | reboot.target |
-
-### Systemd (modern)
-- `systemctl` - cmd to interact w/ systemd sys and svc mngr
-
-```bash
-ls -l /sbin | grep init
-ls -l /lib/systemd/system | grep default.target
-tail -n 8 /lib/systemd/system/graphical.target
-find /etc -name "*rsyslog*" 2> /dev/null | xargs file
-
-
-systemctl list-unit-files
-systemctl list-dependencies graphical.target
-systemctl show -p Wants graphical.target
-systemctl cat default.target
-```
-
-### SystemV (legacy)
-
-```bash
-less /etc/inittab
-ls -l /etc | grep rc.*\.d
-ls -l /etc/rc6.d/
-find /etc/ -type f -name "ssh*"
-less /etc/init.d/ssh
-```
-
-- `/etc/init` > `/sbin/init` > `/etc/inittab`
-- `/etc/rc*.d` - contains processes to be run at each run level 

@@ -22,7 +22,7 @@ Playground for Linux Bash scripts (projects, experiments, & POCs)
 - [🔧 Bash Unit Testing Framework | shUnit2](https://github.com/kward/shunit2)
 
 ## Repos
-- [PythonRopeSwing | CyberMantaRay](https://github.com/CyberMantaRay/PythonRopeSwing/)
 - [PowerShellHoverNet | CyberMantaRay](https://github.com/CyberMantaRay/PowerShellHoverNet)
+- [PythonRopeSwing | CyberMantaRay](https://github.com/CyberMantaRay/PythonRopeSwing/)
 - [leetcode_rust | CoffeelessProgrammer](https://github.com/CoffeelessProgrammer/leetcode_rust)
 - [Data-Structures-and-Algorithms-TS | CoffeelessProgrammer](https://github.com/CoffeelessProgrammer/Data-Structures-and-Algorithms-TS)

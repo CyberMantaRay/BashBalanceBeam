@@ -2,7 +2,7 @@
 **Explore:** [Home](/README.md) [Regex](/0-Regex.md)
 
 ## File System Navigation
-- pwd ∙∙∙∙∙∙∙∙∙∙∙ ls  ∙∙∙∙∙∙∙∙∙∙∙ cd
+- pwd ∙∙∙∙∙∙∙∙∙∙∙ `ls -al`  ∙∙∙∙∙∙∙∙∙∙∙ cd
 - less ∙∙∙∙∙∙∙∙∙∙∙ touch ∙∙∙∙∙∙∙∙∙∙∙ mkdir
 - cat ∙∙∙∙∙∙∙∙∙∙∙ `head -n 4` ∙∙∙∙∙∙∙∙∙∙∙ `tail -n +8`
 - mv ∙∙∙∙∙∙∙∙∙∙∙ cp ∙∙∙∙∙∙∙∙∙∙∙ `rm -r`
@@ -28,6 +28,7 @@
 scp -P <port> tosend.log dstuser@ipdomain:~/Documents
 tar xf uncompress.tar.gz
 sudo tar --same-owner -p -xf uncompress.tar.gz
+echo 'aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ==' | base64 -d
 ```
 
 ### echo
