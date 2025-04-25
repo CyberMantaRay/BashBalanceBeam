@@ -60,7 +60,7 @@ echo -e "hello world\ngoodbye world\nhello brave new world" | awk -F o '/goodbye
 ```
 
 #### Flags/Params
-- `-F fs, --field-separator fs` Use fs for the input field separator
+- `-F fs, --field-separator fs`
 
 ## Learn Regex
 - [Extended Regex | Seneca](https://pressbooks.senecapolytechnic.ca/uli101/chapter/extended-regular-expressions/)
