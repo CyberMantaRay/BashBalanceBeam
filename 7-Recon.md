@@ -41,5 +41,5 @@ done; wait
 
 ```bash
 nmap 172.16.0.30/27 -F
-sudo nmap -sU --max-retries 1 --max-rtt-timeout 2 172.16.0.2
+sudo nmap -sU --max-retries 2 --max-rtt-timeout 4 172.16.0.2
 ```
