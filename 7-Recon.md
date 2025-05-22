@@ -1,10 +1,44 @@
 # Network Recon
-**Explore:** [Home](/README.md) [Basics](/0-Basics.md) [Networking](/2-Networking.md)
+**Explore:** [Home](/README.md) [Basics](/0-Basics.md) [Networking](/2-Networking.md) [WebExploit](/8-WebExploitation.md) [LinuxExploit](/8-LinuxExploitation.md) [WindowsExploit](/8-WindowsExploitation.md)
+
 
 - [Ip Addr Lookup | iplocation.net](https://www.iplocation.net/ip-lookup)
 
+```bash
+rm ~/.ssh/known_hosts
+```
+
 ## Toolbox
 - ping ∙∙∙∙∙∙∙∙∙∙∙ nc ∙∙∙∙∙∙∙∙∙∙∙ nmap ∙∙∙∙∙∙∙∙∙∙∙ /dev/tcp
+
+```bash
+for i in {1..254} ;do (ping -c 1 192.168.28.$i | grep "bytes from" &) ;done | awk '{ print $4 }' | sed 's/://g'
+
+# Can help Identify a box based on the ping response
+# 60 = mac    64 = nix    128 = windows    255 = solaris/cisco
+
+for i in 100 105 111 120; do proxychains nmap -Pn -T5 -p1-10000 192.168.28.$i >> out.txt; echo -e "===============================\n" >> out.txt; done
+````
+
+### nmap
+- Port 🏳
+    - `-F` Top 100 ∙∙∙∙∙∙∙∙∙∙∙ `-p21-23,80` ∙∙∙∙∙∙∙∙∙∙∙ `-p-` All 65535
+
+```bash
+nmap 172.16.0.30/27 -F
+nmap -sT -Pn -T5 -iL ips -p 80
+proxychains nmap -sT -Pn -T5 -p 135-139,22,80,443,21,8080 8.8.8.8
+
+sudo nmap -sU --max-retries 2 --max-rtt-timeout 4 172.16.0.2
+
+# /usr/share/nmap/scripts Ls -la . | grep "smb*"
+nmap -sV -Pn -T5 -p22 127.0.0.1
+proxychains nmap -Pn -sT -T5 -p 80 --script http-enum 192.168.28.111
+proxychains nmap -Pn -T5 -p135-139,445 --script smb-os-discovery 192.168.150.245
+```
+
+
+### Netcat Scripts
 
 ```bash
 #!/bin/bash
@@ -33,13 +67,4 @@ do
     nc -nuvz $net.$i $ports 2>&1 | grep -E 'succ|open' &
 done; wait
 ```
-- `-u` Use UDP instead of TCP
-
-### nmap
-- Port 🏳
-    - `-F` Top 100 ∙∙∙∙∙∙∙∙∙∙∙ `-p21-23,80` ∙∙∙∙∙∙∙∙∙∙∙ `-p-` All 65535
-
-```bash
-nmap 172.16.0.30/27 -F
-sudo nmap -sU --max-retries 2 --max-rtt-timeout 4 172.16.0.2
-```
+- `-u` Check UDP ports

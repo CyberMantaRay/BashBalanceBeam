@@ -13,9 +13,12 @@
 - sleep ∙∙∙∙∙∙∙∙∙∙∙ diff ∙∙∙∙∙∙∙∙∙∙∙ comm
 
 ```bash
+tar -czvf archive-name.tar.gz source-directory-name
 tar xf uncompress.tar.gz
 scp -P <port> tosend.log dstuser@ipdomain:~/Documents
 echo 'aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ==' | base64 -d
+unset HISTFILE
+<cmd> | xclip -selection clipboard          # Copy output to clipboard
 ```
 
 ### echo
