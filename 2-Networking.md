@@ -2,6 +2,10 @@
 
 **Explore:** [Home](/README.md) [Basics](/0-Basics.md)
 
+## Locations
+- /etc/hosts
+- /etc/resolv.conf (nameserver)
+
 ## Cheatsheet
 - `dig <domain|ip> <qry_type>`
   - **Query Types:** A (IPv4) ∙∙∙∙∙∙∙ AAAA (IPv6) ∙∙∙∙∙∙∙ CNAME (Canonical)  ∙∙∙∙∙∙∙ NS (Name Server)
@@ -10,3 +14,4 @@
     - +all/noall ∙∙∙∙∙∙∙ +comments ∙∙∙∙∙∙∙ +authority ∙∙∙∙∙∙∙ +additional ∙∙∙∙∙∙∙ +stats ∙∙∙∙∙∙∙ +answer
 - ~~nslookup [-query=X] <domain|ip>~~ (deprec.)
   - -query=<NS|SOA|MX|any>
+- `tcpdump -XX -vv -i eth0 'dst host 10.50.0.1'`

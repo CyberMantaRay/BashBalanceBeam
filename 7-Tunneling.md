@@ -1,6 +1,11 @@
 # Network Tunneling
 **Explore:** [Home](/README.md) [Recon](/7-Recon.md) [TrafficFiltering](/7-TrafficFiltering.md) [Networking](/2-Networking.md)
 
+```bash
+xfreerdp /u:user /p:password /v:<host>:<port> /dynamic-resolution +clipboard
+xfreerdp /u:user /p:password /v:localhost:<port> /size:1280x720 +clipboard
+```
+
 ## SSH Port Forwarding
 
 ```bash

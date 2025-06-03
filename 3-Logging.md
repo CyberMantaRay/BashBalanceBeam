@@ -5,8 +5,10 @@
 - Cfg: `/etc/rsyslog.conf`
 - Svc: `/usr/sbin/rsyslog.d`
 - `/var/log/syslog`- Ubuntu/Debian catch all
+  - `/var/log/sulog` - sudo cmds run
+  - `/var/log/lastlog` - last user logins
   - `/var/log/messages/` - legacy catch all
-- `/var/log/auth.log`
+- `/var/log/auth.log[/secure]`
   - `/var/run/wtmp` - history for utmp
   - `/var/run/utmp` - curr. logged in users
   - `/var/run/btmp` - failed login attempts

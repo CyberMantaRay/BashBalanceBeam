@@ -95,7 +95,7 @@ less /etc/init.d/ssh
 - System
   - `/etc/inittab`
     - `/etc/init.d/` ∙∙∙∙∙∙∙∙∙∙∙ `/etc/rc[0-6].d/`
-  - `/etc/cron.d/` ∙∙∙∙∙∙∙∙∙∙∙ `/etc/crontab/`
+  - `/etc/crontab` ∙∙∙∙∙∙∙∙∙∙∙ `/etc/cron.d/` 
   - `/etc/default/`
 
 

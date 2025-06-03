@@ -2,10 +2,10 @@
 **Explore:** [Home](/README.md) [Regex](/0-Regex.md)
 
 ## File System Navigation
-- pwd ∙∙∙∙∙∙∙∙∙∙∙ `ls -al`  ∙∙∙∙∙∙∙∙∙∙∙ cd
+- pwd ∙∙∙∙∙∙∙∙∙∙∙ `ls -AlR`  ∙∙∙∙∙∙∙∙∙∙∙ cd
 - less ∙∙∙∙∙∙∙∙∙∙∙ touch ∙∙∙∙∙∙∙∙∙∙∙ mkdir
 - cat ∙∙∙∙∙∙∙∙∙∙∙ `head -n 4` ∙∙∙∙∙∙∙∙∙∙∙ `tail -n +8`
-- mv ∙∙∙∙∙∙∙∙∙∙∙ cp ∙∙∙∙∙∙∙∙∙∙∙ `rm -r`
+- mv ∙∙∙∙∙∙∙∙∙∙∙ cp ∙∙∙∙∙∙∙∙∙∙∙ `rm -r` ∙∙∙∙∙∙∙∙∙∙∙ `!!` (repeat prev. cmd)
 
 ## Commands
 - **file** ∙∙∙∙∙∙∙∙∙∙∙ `man -k "<searchfor>"`
@@ -19,6 +19,7 @@ scp -P <port> tosend.log dstuser@ipdomain:~/Documents
 echo 'aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1kUXc0dzlXZ1hjUQ==' | base64 -d
 unset HISTFILE
 <cmd> | xclip -selection clipboard          # Copy output to clipboard
+python -m SimpleHTTPServer 8000
 ```
 
 ### echo
