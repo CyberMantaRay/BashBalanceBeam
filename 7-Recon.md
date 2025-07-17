@@ -33,7 +33,7 @@ proxychains nmap -Pn -T5 -p135-139,22,80,443,445,21,8080 8.8.8.8
 sudo nmap -sU --max-retries 2 --max-rtt-timeout 4 172.16.0.2
 
 # ls -al /usr/share/nmap/scripts | grep "smb*"
-nmap -Pn -T5 -sV -p22 127.0.0.1                           # Banner grabbing, or use nc/browser
+nmap -Pn -sV -p22 127.0.0.1                            # Banner grabbing, or use nc/browser
 proxychains nmap -Pn -T5 -p80 --script http-enum 192.168.28.111
 proxychains nmap -Pn -T5 -p80 --script http-sql-injection 192.168.28.111
 proxychains nmap -Pn -T5 -p135-139,445 --script smb-os-discovery 192.168.150.245
