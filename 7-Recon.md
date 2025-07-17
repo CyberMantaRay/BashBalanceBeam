@@ -8,7 +8,7 @@
 rm ~/.ssh/known_hosts && rm ~/.config/freerdp/known_hosts
 ```
 
-## Toolbox
+## Linux Toolbox
 - ping ∙∙∙∙∙∙∙∙∙∙∙ nc ∙∙∙∙∙∙∙∙∙∙∙ nmap ∙∙∙∙∙∙∙∙∙∙∙ /dev/tcp
 
 ```bash
@@ -70,3 +70,10 @@ do
 done; wait
 ```
 - `-u` Check UDP ports
+
+## Routers
+
+### VyOS
+
+- show interfaces
+- show ip neighbors | no-match FAILED
