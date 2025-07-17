@@ -76,5 +76,6 @@ done; wait
 ### VyOS
 
 - show interfaces
+- show host os
 - show ip neighbors | no-match FAILED | count
 - show arp \[interface eth0] | no-match FAILED
